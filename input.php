@@ -117,6 +117,27 @@ document.forms[0].onmousemove = function() {	var elems = document.forms[0].eleme
 
       <td width="70%" valign="top" background="images/bg.jpg"><font size="5" color="navy">
 <!-- ========================================================================================= -->	  
+<h1 align="center">Список зареєстрованих</h1>
+<TABLE align="center" border="1" width="80%" style='font-size:100%'>
+   <tr>
+    <td align="center"><b>Прізвище</b></td>
+    <td align="center"><b>Імя</b></td>
+    <td align="center"><b>E-mail</b></td>
+    <td align="center"><b>Пароль</b></td>
+   </tr>
+ <?php
+//==================================================
+$data = file("txt/baza.txt");
+foreach ($data as $line) {
+    $trs = explode(";", $line);
+           echo '<tr>'   ;
+    echo '<td>'.$trs[0].'</td>';
+    echo '<td>'.$trs[1].'</td>';
+    echo '<td>'.$trs[2].'</td>';
+    echo '<td>'.$trs[3].'</td>';
+           echo '</tr>';
+    }
+//===================================================	
 <!-- ===================================================================================================================== -->   
    </td>
     </tr>
